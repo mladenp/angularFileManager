@@ -1,0 +1,29 @@
+<!-- Display icon based on file type -->
+<ng-switch on="node.type">
+
+    <span ng-switch-when="dir">
+        <i class="glyphicon glyphicon-folder-open"></i>
+    </span>
+
+    <span ng-switch-when="file">
+        <i class="glyphicon glyphicon-file"></i>
+    </span>
+
+    <span ng-switch-when="file.php">
+        <i class="glyphicon glyphicon-file php"></i>
+    </span>
+
+    <span ng-switch-when="file.html">
+        <i class="glyphicon glyphicon-file html"></i>
+    </span>
+
+    <span ng-switch-when="file.js">
+        <i class="glyphicon glyphicon-file js"></i>
+    </span>
+
+    <span ng-switch-default>
+        <i class="glyphicon glyphicon-warning-sign></i>
+    </span>
+
+
+</ng-switch>

@@ -1,0 +1,58 @@
+<div class="modal-header">
+    <h3 class="modal-title text-center" id="modal-title">
+        <i class="glyphicon glyphicon-file"></i>
+        Create new File
+
+        <button class="btn btn-outline-inverse btn-close" ng-click="modalInstance.close();">
+            <i class="glyphicon glyphicon-remove"></i>
+        </button>
+    </h3>
+</div>
+
+<div class="modal-body" id="modal-body">
+
+    <form name="formModal" ng-submit="submit()">
+
+    <div class="row">
+
+        <!-- File name text input-->
+        <div class="col-md-8">
+            <label for="dirName">File name</label>
+            <input type="text" ng-model="formModal.name" id="dirName" ng-required="true" class="form-control"
+                   autofocus placeholder="File Name">
+        </div>
+
+        <!-- Extension picker-->
+        <div class="col-md-4">
+            <label for="extension">Choose extension</label>
+            <select ng-model="formModal.extension" ng-init="formModal.extension = 'html'" class="form-control" id="extension" ng-required="true">
+                <option value="html" ng-selected="true" selected="selected">HTML</option>
+                <option value="php">PHP</option>
+                <option value="js">JS</option>
+            </select>
+        </div>
+    </div>
+
+        <br>
+
+        <label for="parentId">Choose parent directory</label>
+
+        <div ng-include="'views/dataList.html'"></div>
+
+        <br>
+
+        <button type="submit" class="btn btn-success btn-lg btn-bloc"
+                ng-click="createNode('file', formModal.name, formModal.parentId, formModal.extension)"
+                ng-disabled="formModal.name.$invalid || formModal.parentId.$invalid ">
+            <span class="glyphicon glyphicon-plus"></span>
+            Create File
+        </button>
+
+        <button type="reset" class="btn btn-info btn-lg btn-bloc">
+            <span class="glyphicon glyphicon-refresh"></span>
+            Clear
+        </button>
+
+    </form>
+
+</div>

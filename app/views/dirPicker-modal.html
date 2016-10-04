@@ -1,0 +1,45 @@
+<div class="modal-header">
+    <h3 class="modal-title text-center" id="modal-title">
+        <i class="glyphicon glyphicon-folder-open"></i>
+        Create new directory
+
+        <button class="btn btn-outline-inverse btn-close" ng-click="modalInstance.close();">
+            <i class="glyphicon glyphicon-remove"></i>
+        </button>
+    </h3>
+
+</div>
+
+<div class="modal-body" id="modal-body">
+
+    <form name="formModal" ng-submit="submit()">
+
+        <label for="dirName">Directory name</label>
+        <input type="text" ng-model="formModal.name" id="dirName" ng-required="true" class="form-control"
+               autofocus placeholder="Directory Name">
+
+        <br>
+
+        <label for="parentId">Choose parent directory</label>
+
+        <div ng-include="'views/dataList.html'"></div>
+
+
+        <br>
+
+        <button type="submit" class="btn btn-success btn-lg btn-bloc"
+                ng-click="createNode('dir', formModal.name, formModal.parentId)"
+                ng-disabled="formModal.$invalid">
+            <span class="glyphicon glyphicon-plus"></span>
+            Create Directory
+        </button>
+
+
+        <button type="reset" class="btn btn-info btn-lg btn-bloc">
+            <span class="glyphicon glyphicon-refresh"></span>
+            Clear
+        </button>
+
+    </form>
+
+</div>

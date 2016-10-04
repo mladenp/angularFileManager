@@ -1,0 +1,62 @@
+<div class="container">
+
+    <div class="jumbotron">
+
+        <h1 align="center" style="font-weight: bold;"><i class="glyphicon glyphicon-briefcase"></i> NG File Manager</h1>
+
+        <!-- Alerts -->
+        <div class="alertsWrap">
+            <div class="floatAlerts">
+                <uib-alert
+                        ng-repeat="alert in alerts"
+                        type="{{ alert.type }}"
+                        dismiss-on-timeout="{{ alert.time }}"
+                        close="alerts.splice($index, 1);"
+                        ng-click="alerts.splice($index, 1);">
+                    {{alert.msg}}
+                </uib-alert>
+            </div>
+        </div>
+
+        <!-- New Buttons-->
+        <div class="ctrls">
+            <button type="button" class="btn btn-lg btn-primary" ng-click="openModal('dir')">
+                <i class="glyphicon glyphicon-folder-open"></i> New Directory
+            </button>
+
+            <button type="button" class="btn btn-lg btn-primary" ng-click="openModal('file')">
+                <i class="glyphicon glyphicon-file"></i> New File
+            </button>
+        </div>
+
+        <!-- Node Details -->
+        <div class="nodeDetails row">
+            <div class="col-sm-2"><span>Selected type: </span>{{ nodeDetail.type }}</div>
+            <div class="col-sm-3"><span> Name: </span> {{ nodeDetail.name }}</div>
+            <div class="col-sm-2"><span> Contains: </span> {{ nodeDetail.children.length }} items</div>
+            <div class="col-sm-3"><span> Created at: </span> {{ nodeDetail.created | date:'HH:mm:ss yyyy-MM-dd'}}</div>
+            <div class="col-sm-2"><span> Unique ID: </span> {{ nodeDetail.id }}</div>
+        </div>
+
+        <!-- Loop Nodes -->
+        <div class="row-fluid nodeTree">
+
+            <li class="list-group-item" style="cursor: not-allowed;">
+                <span class="numeration"> 0.</span>
+
+                <i class="glyphicon glyphicon-folder-open"></i>
+                <span class="name">root</span>
+            </li>
+
+            <ul class="list-group">
+                <repeater nodes="nodes.children"></repeater>
+            </ul>
+
+        </div>
+
+        <footer>NG File Manager - <a href="http://mladenpetrovic.com">Mladen Petrović</a> - <a href="mailto:mladenpetrovic88@gmail.com">mladenpetrovic88@gmail.com</a></footer>
+
+
+    </div>
+</div>
+

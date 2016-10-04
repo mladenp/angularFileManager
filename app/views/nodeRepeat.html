@@ -1,0 +1,32 @@
+<ul ng-repeat="node in nodes track by $index"
+    ng-click="toggleCollapse = !toggleCollapse; nodeDetails(node); $event.stopPropagation()"
+    ng-class="{ 'toggleCollapse' : toggleCollapse }"
+    class="nodeWrap">
+    <!-- Stop event propagation after -->
+
+    <li class="list-group-item"
+        ng-class="{ 'node-type-file' : node.type != 'dir', 'activeNode' : activeNode }"
+        ng-click="activeNode = !activeNode">
+
+        <span class="numeration"> {{ $index }}.</span>
+
+        <!--<fm-icon type="{{ node.type }}"></fm-icon>-->
+        <span ng-include="'views/icon.html'"></span>
+
+        <span class="name" editable-text="node.name" e-name="name" e-form="nameBtn"
+              onaftersave="order($parent.$parent)"
+              onbeforesave="checkName(node.name, $data)">
+            {{ node.name }}
+        </span>
+
+        <div class="nodeCtrls">
+            <button ng-click="$event.stopPropagation(); nameBtn.$show()" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-edit"></i> Edit</button>
+            <button ng-click="delete(nodes, node)" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i> Delete</button>
+        </div>
+
+    </li>
+
+
+    <repeater ng-if="node.children" nodes="node.children"></repeater>
+
+</ul>

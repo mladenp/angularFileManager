@@ -1,0 +1,6 @@
+<option ng-if="node.children" ng-repeat="node in node.children"
+        value="{{node.id}}"
+        ng-include="'views/nodeRepeatSelectBox.html'"
+        label=" / {{node.name}}">
+     {{node.name}}
+</option>

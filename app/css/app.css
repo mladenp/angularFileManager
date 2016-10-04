@@ -1,0 +1,205 @@
+/* app css stylesheet */
+
+/*.singleNode{*/
+  /*border-bottom: 1px solid #3c3c3c;*/
+  /*clear: both;*/
+  /*padding-bottom: 1rem;*/
+  /*padding-top: 1rem;*/
+/*}*/
+/*.nodeWrap .singleNode{*/
+  /*margin-left: 2%;*/
+/*}*/
+body{
+  background-image: url('gplaypattern.png');
+}
+.container .jumbotron{
+  padding: 1rem 2rem;
+}
+.ctrls{
+  margin-bottom: 0.5rem;
+}
+.nodeId{
+  font-size: 1.2rem;
+  color: #a3a3a3;
+}
+.nodeCtrls{
+  float: right;
+  margin-top: -5px;
+}
+.numeration{
+  color: #d1d1d1;
+  margin-left: 2rem;
+  font-size: 1.3rem;
+}
+span.name{
+  padding-left: 5px;
+  color: #5a5a5a;
+  font-weight: bold;
+
+}
+ul.nodeWrap{
+  padding-left: 25px;
+  border-left: 1px dashed #d6d6d6;
+}
+@keyframes fresh{
+  0%   {background-color: rgba(0,255,0, 1);}
+  25%  {background-color: rgba(0,255,0, 0.75);}
+  50%  {background-color: rgba(0,255,0, 0.5);}
+  100% {background-color: rgba(255,255,255, 1);}
+}
+
+.nodeTree li.list-group-item{
+  animation-name: fresh;
+  animation-duration: 3s;
+  padding: 14px 5px;
+}
+
+
+i.glyphicon-file{
+  color: deepskyblue;
+}
+i.glyphicon-folder-open, i.glyphicon-folder-close{
+  color: #e2c717;
+}
+.glyphicon-file.php{
+  color: #777BB3;
+}
+.glyphicon-file.html{
+  color: #F16529;
+}
+.glyphicon-file.js{
+  color: #18f088;
+}
+
+.selectedNode{
+  background-color: #e7e7e7;
+}
+.alertsWrap{
+  position: relative;
+}
+.floatAlerts{
+  position: absolute;
+  right: 0;
+  min-width: 500px;
+  z-index: 99;
+}
+.alert{
+  padding: 10px;
+  margin-bottom: 5px;
+
+}
+
+.toggleCollapse ul{
+  visibility: hidden;
+  height: 10px;
+  position: absolute;
+}
+.toggleCollapse ul:after{
+  clear: both;
+}
+
+.nodeWrap li:before{
+  content: '↓';
+  position: absolute;
+  z-index: 999;
+  padding-top: 0.2rem;
+  padding-left: 0.5rem;
+  font-size: 1.2rem;
+  color: #3c3c3c;
+}
+.toggleCollapse li:before{
+  content: "→";
+}
+.activeNode{
+  background-color: rgba(124, 218, 255, 0.2);
+
+}
+.activeNode.node-type-file{
+  margin-bottom: 0;
+}
+
+.nodeDetails{
+  padding: 1.2rem;
+  font-weight: bold;
+}
+.nodeDetails span{
+  color: #585858;
+  font-weight:100;
+}
+.nodeDetails > div{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background: #f3f3f3;
+}
+.nodeTree li.list-group-item{
+  cursor: pointer;
+}
+.nodeTree li.list-group-item:hover > span.name{
+  color: black !important;
+}
+li.list-group-item.node-type-file{
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+li.list-group-item.node-type-file > span.name{
+  font-weight: 200;
+}
+
+.nodeWrap li.node-type-file:before{
+  content: none;
+}
+.glyphicon-briefcase{
+  color: #e2c717;
+}
+.btn{
+  border-radius: 0;
+}
+.btn-close{
+  background: none;
+  float: right;
+}
+.btn-close:hover{
+  color: red;
+}
+.typeahead-demo .custom-popup-wrapper {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  background-color: #f9f9f9;
+}
+
+.typeahead-demo .custom-popup-wrapper > .message {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  color: #868686;
+}
+
+.typeahead-demo .custom-popup-wrapper > .dropdown-menu {
+  position: static;
+  float: none;
+  display: block;
+  min-width: 160px;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+span.selectDD{
+  padding-left: 1rem;
+}
+.btn:focus{
+  -webkit-box-shadow: -2px 3px 8px 0px rgba(143,143,143,1);
+  -moz-box-shadow: -2px 3px 8px 0px rgba(143,143,143,1);
+  box-shadow: -2px 3px 8px 0px rgba(143,143,143,1);
+}
+h1{
+  color: #585858;
+  padding-bottom: 2rem;
+}
+footer{
+  padding-top: 2rem;
+  text-align: right;
+  font-size: 1rem;
+}
