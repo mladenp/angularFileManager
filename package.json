@@ -1,6 +1,6 @@
 {
-  "name": "angularFileManager",
-  "private": false,
+  "name": "angularfilemanager",
+  "private": true,
   "version": "0.0.0",
   "description": "A prototype for file manager in angular",
   "repository": "https://github.com/mladenp/angularFileManager",
@@ -21,6 +21,9 @@
     "shelljs": "^0.2.6"
   },
   "scripts": {
+    "replace-name-preview": "/node_modules/replace/bin/replace.js myApp YOUR_APP_NAME app -r -p --include='*.js,*.html' --exclude=bower_components",
+    "replace-name": "/node_modules/replace/bin/replace.js myApp YOUR_APP_NAME app -r --include='*.js,*.html' --exclude=bower_components",
+
     "postinstall": "bower install",
     "prestart": "npm install",
     "start": "http-server ./app -a localhost -p 8000 -c-1",

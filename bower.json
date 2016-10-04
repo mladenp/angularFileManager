@@ -1,5 +1,5 @@
 {
-  "name": "ng File Manager",
+  "name": "ngfilemanager",
   "description": "File Manager prototype in Angular 1.x",
   "version": "0.0.1",
   "homepage": "https://github.com/mladenp/angularFileManager",
@@ -12,5 +12,9 @@
   	"angular-ui-router": "~0.2",
     "bootstrap": "~3.1",
     "fontawesome": "~4.2.0"
+  },
+  "devDependencies": {
+    "angular-xeditable": "^0.4.0",
+    "angular-ui-select": "^0.19.4"
   }
 }
